@@ -2,7 +2,7 @@
 
 *** GROUP MEMBERS ***
 - Prosssy Kamau
-- Evaclaire Wamitu
+- Evaclaire Wamitu - evamunyika@gmail.com
 - Julius Kinyua - juliusczar36@gmail.com
 
 ###PROJECT DESCRIPTION

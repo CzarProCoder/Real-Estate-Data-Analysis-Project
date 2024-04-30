@@ -51,13 +51,16 @@ From the histograms above,we can conclude that our variables follow a normal dis
 
 These visuals will help analyze the variation of average house prices as per the overall condition of the house ,that is whether the house is located in a water front or not,the quality of views from the house and the number of levels in the house.
 
-![barplot](images\fig4.png)
+![barplot](images/fig4.png)
 
 ***Scatter Plots***
 
 We will create a grid of scatter plots to visualize and better explore the relationships between variables and check if they pass the assumptions of linear regression.That is Linearity,Homoscedasticity and normality assumptions.
 
-![Pairplot of Key Features](images\fig7.png)
+![Pairplot of Key Features](images/fig7.png)
+
+
+### MODELING
 
 
 

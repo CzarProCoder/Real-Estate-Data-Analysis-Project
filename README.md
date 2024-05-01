@@ -7,6 +7,7 @@
 - Joan Nyamache - kerubonyamache@gmail.com
 - Elizabeth Masai -elizabethchemtaim@gmail.com
 - Kelvin Mwaura - kelvin.mwaura1@student.moringaschool
+- Mourine kitili- mourinekitilimourine@gmail.com
 
 ### PROJECT OVERVIEW 
 
@@ -61,6 +62,35 @@ We will create a grid of scatter plots to visualize and better explore the relat
 
 
 ### MODELING
+
+In this section,Ordinary Least Squares (OLS) will be used  and the values that will be looked at in the summary will be R-squared and P-values.
+R-squared communicates the level of variance around our target variable(Price) that can be explained by the model.P-value on the other hand is used to check the null hypothesis ,that is if there is a relationship between the target(price)   and the chosen variables.If the p-value is  not less than 0.05,we fail to reject the null hypothesis.
+
+***General Overview***
+
+We will take a general overview on the variables that have a strong correlation with the price. 
+Based on the visualization done above,it is evident that the square footage of living space (sqft_living) shows the strongest positive correlation with the price, marked at 0.7,this indicates a significant impact of the size of the living area to price.On the other hand the year the house was built has a weaker positive correlation  of 0.5 .
+
+***Simple Linear Regression Model***
+
+In this model ,we will use price as the dependent variable  and sqft_living as the independent variable to determine the coefficient and the y-intercept.
+The model has an R-squared value of 0.49 expolaining 49% variation in price ,making it statistically significant.The intercept  and coefficient  for sqft_living are approximately -$43,990 and 281, respectively, both of which are statistically significant.
+We will also come up with a qqplot which gives an indication that  using a polynomial regression for price and sqft_living would have been more effective .
+
+***Multiple Linear Regression Model***
+
+This model incorporates all the other independent variables to understand their impact on price.We will introduce dummies for the categorical data.
+This model has an approximate R-squared of 0.6 indicating a 60% variance in price.It is  however off by $156,659 as given by our mean absolute error.
+
+
+
+
+
+!
+
+
+
+
 
 
 

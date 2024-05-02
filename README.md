@@ -8,7 +8,7 @@
 - Elizabeth Masai -elizabethchemtaim@gmail.com
 - Kelvin Mwaura - kelvin.mwaura1@student.moringaschool
 - Mourine kitili- mourinekitilimourine@gmail.com
-
+- Allan Kiplagat - allankiplgat@gmail.com
 ### PROJECT OVERVIEW 
 
 The project aims to assit the real estate agents in  King County to adrress the need for precise house price estimation by developing a robust predictive model .To achieve this,we will undertake  indepth analysis of the real estate data provided ,which includes ,historical sales, current listings, property attributes, and other relevant features
@@ -71,22 +71,41 @@ R-squared communicates the level of variance around our target variable(Price) t
 We will take a general overview on the variables that have a strong correlation with the price. 
 Based on the visualization done above,it is evident that the square footage of living space (sqft_living) shows the strongest positive correlation with the price, marked at 0.7,this indicates a significant impact of the size of the living area to price.On the other hand the year the house was built has a weaker positive correlation  of 0.5 .
 
-***Simple Linear Regression Model***
+***First Model***
 
 In this model ,we will use price as the dependent variable  and sqft_living as the independent variable to determine the coefficient and the y-intercept.
 The model has an R-squared value of 0.49 expolaining 49% variation in price ,making it statistically significant.The intercept  and coefficient  for sqft_living are approximately -$43,990 and 281, respectively, both of which are statistically significant.
 We will also come up with a qqplot which gives an indication that  using a polynomial regression for price and sqft_living would have been more effective .
 
-***Multiple Linear Regression Model***
+***Second Model***
 
 This model incorporates all the other independent variables to understand their impact on price.We will introduce dummies for the categorical data.
 This model has an approximate R-squared of 0.6 indicating a 60% variance in price.It is  however off by $156,659 as given by our mean absolute error.
 
+***Third Model***
+
+Since our dataset suggests that some columns are stored in object form but are supposed to be numeric suc as yr_renovated and sqft_basement,we  will convert them into numeric.The transformation will help to train our machine learning model which requires numeric data.We will create a new  multiple linear regrerssion model which will include the new numeric columns created.We will perform one-hot encoding on the view column.
+The new model has an adjusted  R-squared of approximately 52% ,this explains 52% of the variance in price .The model is statistically significant.However the predictions are off by  $169,937.This makes the previous model better than this model.
+
+***Fourth Model***
+
+We will build another model using the Waterfront column after which we will split the dataset into training and testing sets .The model is statistically significant with an adjusted R-squared value of approximately 55%,this explains 55 % of variation in price.However,the model's predictions are off by $167,435,amking the previous model better than this.
+
+***Fifth Model***
+
+We will build another model using the condition column .
+The model is statistically significant with an adjusted R-squared value of approximately 53%, indicating a 53% of the variance in price.
+
+after including all the categorical variables independently into our model, we have come to the conclusion that, we will go with the first multiple linear regression model ie 'Multi Model' as it takes into account all the independent variables that are highly correlated with price and it also is the model with the highest r sqaured valuem of .592. It explains about 60% percent of the variance in price.
 
 
 
 
-!
+
+
+
+
+
 
 
 

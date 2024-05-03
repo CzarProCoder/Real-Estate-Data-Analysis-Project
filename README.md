@@ -9,6 +9,7 @@
 - Kelvin Mwaura - kelvin.mwaura1@student.moringaschool
 - Mourine kitili- mourinekitilimourine@gmail.com
 - Allan Kiplagat - allankiplgat@gmail.com
+- Mitch Mathiu - mmuriithi92@gmail.com
 ### PROJECT OVERVIEW 
 
 The project aims to assit the real estate agents in  King County to adrress the need for precise house price estimation by developing a robust predictive model .To achieve this,we will undertake  indepth analysis of the real estate data provided ,which includes ,historical sales, current listings, property attributes, and other relevant features

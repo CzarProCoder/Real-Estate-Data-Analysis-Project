@@ -46,7 +46,12 @@ This will be used to explore the distribution of variables with the strongest po
 
 ![f'Distribution ](images/fig3.png)
 
-From the histograms above,we can conclude that our variables follow a normal distribution with skewness and kurtosis in all the distributions.
+From the histograms above, we can conclude that;
+1. Distribution of House Prices-  the distribution appears slightly right-skewed with a skewness of 4.02 .This indicates that there are more houses at higher price renges than lower ones.
+The kurtosis of the price plot is 34.54 which is much greater than 3,indicating leptokurtic distribution that is, the distribution has a sharp peak and heavy tails.
+2. Distribution of Living Area Sizes(sqft_living)-The skewness of the sqft_living plot is 1.47 ,implicating a moderately positively skewed distribution.The peak of the distribution suggests that most houses have living areas clustered around a specific size range, with fewer houses having very small or very large living areas.
+3. Distribution of Sq. Footage apart from the basement-The skewness of the sqft_above plot is 1.45,which indicates a moderately positively skewed distribution distribution.
+4. Distribution of Interior Sq. footage of nearest 15 neighbors-The skewness of the sqft_living15 plot is 1.11, indicating  a moderately positively skewed distribution.This suggests that houses in a given neighborhood tend to have similar interior square footage sizes.
 
 
 ***Bar Plots***
@@ -72,32 +77,61 @@ R-squared communicates the level of variance around our target variable(Price) t
 We will take a general overview on the variables that have a strong correlation with the price. 
 Based on the visualization done above,it is evident that the square footage of living space (sqft_living) shows the strongest positive correlation with the price, marked at 0.7,this indicates a significant impact of the size of the living area to price.On the other hand the year the house was built has a weaker positive correlation  of 0.5 .
 
-***First Model***
+***Baseline Model***
 
 In this model ,we will use price as the dependent variable  and sqft_living as the independent variable to determine the coefficient and the y-intercept.
 The model has an R-squared value of 0.49 expolaining 49% variation in price ,making it statistically significant.The intercept  and coefficient  for sqft_living are approximately -$43,990 and 281, respectively, both of which are statistically significant.
 We will also come up with a qqplot which gives an indication that  using a polynomial regression for price and sqft_living would have been more effective .
 
-***Second Model***
+***First Model***
 
 This model incorporates all the other independent variables to understand their impact on price.We will introduce dummies for the categorical data.
 This model has an approximate R-squared of 0.6 indicating a 60% variance in price.It is  however off by $156,659 as given by our mean absolute error.
 
-***Third Model***
+***Second Model***
 
 Since our dataset suggests that some columns are stored in object form but are supposed to be numeric suc as yr_renovated and sqft_basement,we  will convert them into numeric.The transformation will help to train our machine learning model which requires numeric data.We will create a new  multiple linear regrerssion model which will include the new numeric columns created.We will perform one-hot encoding on the view column.
 The new model has an adjusted  R-squared of approximately 52% ,this explains 52% of the variance in price .The model is statistically significant.However the predictions are off by  $169,937.This makes the previous model better than this model.
 
-***Fourth Model***
+***Third Model***
 
 We will build another model using the Waterfront column after which we will split the dataset into training and testing sets .The model is statistically significant with an adjusted R-squared value of approximately 55%,this explains 55 % of variation in price.However,the model's predictions are off by $167,435,amking the previous model better than this.
 
-***Fifth Model***
+***Fourth Model***
 
 We will build another model using the condition column .
-The model is statistically significant with an adjusted R-squared value of approximately 53%, indicating a 53% of the variance in price.
+The model is statistically significant with an adjusted R-squared value of approximately 53%, indicating a 53% of variation in price.
 
-after including all the categorical variables independently into our model, we have come to the conclusion that, we will go with the first multiple linear regression model ie 'Multi Model' as it takes into account all the independent variables that are highly correlated with price and it also is the model with the highest r sqaured valuem of .592. It explains about 60% percent of the variance in price.
+after including all the categorical variables independently into our model, we have come to the conclusion that, we will go with the first multiple linear regression model ,that is, 'First Model' as it takes into account all the independent variables that are highly correlated with price and it also is the model with the highest r sqaured value of .592. It explains about 60% percent of the variance in price.
+
+***Linear Regression***
+
+After testing and training our model,regression metrics like r2_score, mean_absolute_error and mean_squared_erro will be used to evaluate the performance of our machine learning model.
+
+ A summarised interpretation of the the metrics is as below;
+1. r-squared value of approximately 0.551 indicates that the linear regression model explains about 55% of the variance in the target variable price.
+2. MAE value of approximately 152,381 indicates the average magnitude of the errors between the actual and predicted prices
+3. MSE value of approximately `58.339,956,963.6276' represents the average of squared differences between actual and predicted prices.
+4. RMSE value of approximately '241536.6575980292' is the square root of MSE and represents the typical magnitude of errors in the model's predictions. 
+
+We will initilize a Random Forest Regressor model and assign it to our variable.
+
+### INFERENCE ### 
+After training our data ,the model with 80/20 ratio had the highest r-squared.
+We will then use the 80/20 split in all the predictor variables to see how it affects the cofficients and r-squared.
+The R-squared value surges upwardly to 87.31% while the while the Mean Absolute Error (MAE) has drastically droppes to '69870.643' dollars.
+
+### CONCLUSIONS###
+
+From our our modeling,the following conclusions can be drawn'
+1. Leveraging knowledge of key price determinants and understanding the nuances of property valuation, stakeholders can make informed decisions regarding pricing strategies, property investments, and market participation.
+2. The analysis equips stakeholders, including homeowners, real estate professionals, and potential buyers, with actionable insights to navigate the housing market effectively.
+
+ ### RECOMMENDATIONS ###
+ Our recommendations to Real Estate stakeholders in King County after our modeling includes but not limited to the following;
+  Seasonal Buying Strategy: Purchasing a home during winter could be financially advantageous due to lower average prices and reduced competition from other buyers, though it's vital to consider the seasonal challenges and work with an expert for a successful transaction.
+
+  Regular Evaluation: Buyers need to check the age and condition of major parts of a home like the roof and appliances, while sellers can increase their property’s value by renovating.
 
 
 
